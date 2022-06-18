@@ -16,10 +16,10 @@
 
 ## Comandos para enviar para o git
 
--- git add .
--- git commit -m ""
--- git push -u origin main 
+- git add .
+- git commit -m ""
+- git push -u origin main 
 
 ## Comando para baixar as alterações feita por outros membros
 
--- git pull
+- git pull
