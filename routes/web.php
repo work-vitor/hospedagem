@@ -17,9 +17,13 @@ use App\Http\Controllers\HospedagemController;
 //Route::get('/home', function () {return view('welcome');});
 
 // Tela inicial
-Route::get('/home', [HospedagemController::class, 'index'])->name('index');
+    Route::get('/home', [HospedagemController::class, 'index'])->name('index');
 
-Route::get('home/{id}', [HospedagemController::class, 'show'])->name('show');
+// Tela de informações
+    Route::get('home/info/{id}', [HospedagemController::class, 'show'])->name('show');
+
+// Tela de compra
+    Route::get('home/compra/{id}', [HospedagemController::class, 'compra'])->name('compra');
 
 // Pesquisa de hospedagem
-Route::any('/home/search', [HospedagemController::class, 'search'])->name('search');
+    Route::any('/home/search', [HospedagemController::class, 'search'])->name('search');

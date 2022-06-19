@@ -36,4 +36,15 @@ class HospedagemController extends Controller
         $hospedagens = Hospedagem::where('nome', 'LIKE', "%$request->search%")->paginate();
         return view('index', compact('hospedagens', 'filters'));
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function compra($id){
+        $hospedagens = Hospedagem::find($id);
+        return view('compra', compact('hospedagens'));
+    }
 }

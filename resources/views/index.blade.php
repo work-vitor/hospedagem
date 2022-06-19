@@ -30,7 +30,7 @@
                     <h3>{{ $hospedagem->nome }}</h3>
                     <p>{{ $hospedagem->descricao }}</p>
                     <a href="{{ route('show', $hospedagem->id) }}" class="btn btn-dark btn-lg mr-1">Ver detalhes</a>
-                    {{-- <a href="{{ route('compra', $hospedagem->id) }}" class="btn btn-dark btn-lg ml-1">Comprar</a> --}}
+                    <a href="{{ route('compra', $hospedagem->id) }}" class="btn btn-dark btn-lg ml-1">Comprar</a>
                 </div>
             @endforeach
         </div>
