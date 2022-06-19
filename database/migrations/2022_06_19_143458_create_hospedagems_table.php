@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -21,6 +22,9 @@ return new class extends Migration
             $table->string('descricao');
             $table->timestamps();
         });
+
+       //CRIAÇÃO ATRIBUTO FOTO COMO LONGBLOB PARA ADICIONAR AS FOTOS (SOU UM GÊNIO)
+        DB::statement("ALTER TABLE hospedagems ADD foto LONGBLOB");
     }
 
     /**

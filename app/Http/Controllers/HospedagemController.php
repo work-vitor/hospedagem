@@ -15,6 +15,7 @@ class HospedagemController extends Controller
     public function index()
     {
         $hospedagens = Hospedagem::orderBy('nome')->paginate(5);
+
         return view ('index', compact('hospedagens'));
     }
 
@@ -26,7 +27,8 @@ class HospedagemController extends Controller
      */
     public function show($id)
     {
-        //
+        $hospedagens = Hospedagem::find($id);
+        return view('show', compact('hospedagens'));
     }
 
     public function search(Request $request){

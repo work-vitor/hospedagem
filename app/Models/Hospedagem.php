@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Hospedagem extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['nome', 'servicos', 'descricao', 'foto'];
 }
