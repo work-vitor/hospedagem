@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nome');
             //$table->integer('id_quarto'); descomentar quando criar o migration de relacionamento
             $table->string('servicos');
+            $table->string('descricao');
             $table->timestamps();
         });
     }
