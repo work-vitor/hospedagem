@@ -18,3 +18,6 @@ use App\Http\Controllers\HospedagemController;
 
 // Tela inicial
 Route::get('/home', [HospedagemController::class, 'index'])->name('index');
+
+// Pesquisa de hospedagem
+Route::any('/home/search', [HospedagemController::class, 'search'])->name('search');

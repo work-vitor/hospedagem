@@ -14,7 +14,7 @@ class HospedagemController extends Controller
      */
     public function index()
     {
-        $hospedagens = Hospedagem::all();
+        $hospedagens = Hospedagem::orderBy('nome')->paginate(5);
         return view ('index', compact('hospedagens'));
     }
 
@@ -27,5 +27,11 @@ class HospedagemController extends Controller
     public function show($id)
     {
         //
+    }
+
+    public function search(Request $request){
+        $filters= $request->except('_token');
+        $hospedagens = Hospedagem::where('nome', 'LIKE', "%$request->search%")->paginate();
+        return view('index', compact('hospedagens', 'filters'));
     }
 }

@@ -7,6 +7,20 @@
 @stop
 
 @section('content')
+    <form method="post" action="{{ route('search') }}">
+        @csrf
+        <input type= "text" name="search" id="search" placeholder="Digite sua busca">
+        <button type="submit" class="btn btn-dark">Buscar</button>
+    </form>
+
+    @if(isset($filters))
+        {{ $hospedagens->appends($filters)->links() }}
+    @else
+        {{ $hospedagens->links() }}
+    @endif
+
+    <hr>
+
     <div class="container">
         <div class="row">
             @foreach ($hospedagens as $hospedagem )
