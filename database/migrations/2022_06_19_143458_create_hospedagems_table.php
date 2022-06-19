@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('hospedagems', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->integer('id_quarto');
-            $table->string('servicos'); //nao sabia o que colocar como tipo, entao pus string mesmo<---
+            //$table->integer('id_quarto'); descomentar quando criar o migration de relacionamento
+            $table->string('servicos');
             $table->timestamps();
         });
     }
