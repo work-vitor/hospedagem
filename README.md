@@ -7,6 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Lembrete
+
+- BAIXAR ALTERAÇÕES ANTES DE ENVIAR ALTERAÇÕES
+
 ## Comandos após clonar o repósitorio
 
 
