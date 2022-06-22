@@ -13,11 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('compras', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
+            // $table->id('id_usuario');
+            // $table->id('id_quarto');
+            $table->string('valor_total');
             $table->string('categoria');
-            // $table->integer('id_quarto'); descomentar quando criar o migration de relacionamento
+            $table->date('check-in');
+            $table->date('check-out');
+            $table->boolean('opcao_servico');
             $table->timestamps();
         });
     }
@@ -29,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuarios');
+        Schema::dropIfExists('compras');
     }
 };
