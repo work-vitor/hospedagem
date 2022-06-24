@@ -15,13 +15,10 @@ return new class extends Migration
     {
         Schema::create('quartos', function (Blueprint $table) {
             $table->id();
-            //$table->integer('id_usuario'); descomentar quando criar o migration de relacionamento
             //$table->integer('id_hospedagem'); descomentar quando criar o migration de relacionamento
-            $table->string('categoria');
+            $table->string('categoria'); //quarto ou leito
             $table->integer('qtd_leitos');
             $table->integer('qtd_leito_ocupado');
-            $table->decimal('valor');
-            $table->date('data');
             $table->timestamps();
         });
     }
