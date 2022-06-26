@@ -20,6 +20,7 @@ return new class extends Migration
             //$table->integer('id_quarto'); descomentar quando criar o migration de relacionamento
             $table->string('servicos');
             $table->string('descricao');
+            $table->decimal('valor_leito');
             $table->timestamps();
         });
 
