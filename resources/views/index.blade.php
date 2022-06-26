@@ -26,9 +26,9 @@
             @foreach ($hospedagens as $hospedagem )
                 <div class="col-12 col-sm-6 col-md-4 my-3" align="center">
 
-                    <p><img src="data:{{ $hospedagem->foto }};base64,'. $data .'" alt="{{ $hospedagem->nome }}" style="width:250px; height:200px;"></p>
+                    <p><img src="data:image/;base64,{{ base64_encode($hospedagem->foto) }}" alt="{{ $hospedagem->nome }}" style="width:250px; height:200px;"></p>
                     <h3>{{ $hospedagem->nome }}</h3>
-                    <p>{{ $hospedagem->descricao }}</p>
+                    <h5>{{ $hospedagem->valor }}</h5>
                     <a href="{{ route('show', $hospedagem->id) }}" class="btn btn-dark btn-lg mr-1">Ver detalhes</a>
                     <a href="{{ route('compra', $hospedagem->id) }}" class="btn btn-dark btn-lg ml-1">Comprar</a>
                 </div>

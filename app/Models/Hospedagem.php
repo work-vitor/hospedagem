@@ -9,5 +9,5 @@ class Hospedagem extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome', 'servicos', 'descricao', 'foto'];
+    protected $fillable = ['nome', 'servicos', 'descricao', 'valor', 'foto'];
 }
