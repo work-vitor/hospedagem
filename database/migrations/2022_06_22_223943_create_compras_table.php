@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -14,17 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('hospedagems', function (Blueprint $table) {
+        Schema::create('compras', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('servicos');
-            $table->string('descricao');
-            $table->decimal('valor');
+            // $table->id('id_usuario');
+            // $table->id('id_quarto');
+            $table->string('valor_total');
+            $table->string('categoria');
+            $table->date('check-in');
+            $table->date('check-out');
+            $table->boolean('opcao_servico');
             $table->timestamps();
         });
-
-       //CRIAÇÃO ATRIBUTO FOTO COMO LONGBLOB PARA ADICIONAR AS FOTOS (SOU UM GÊNIO)
-        DB::statement("ALTER TABLE hospedagems ADD foto LONGBLOB");
     }
 
     /**
@@ -34,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hospedagems');
+        Schema::dropIfExists('compras');
     }
 };

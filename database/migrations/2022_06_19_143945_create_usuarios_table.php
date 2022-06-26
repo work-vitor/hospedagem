@@ -16,9 +16,7 @@ return new class extends Migration
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('categoria');
-            $table->decimal('saldo');
-            // $table->integer('id_quarto'); descomentar quando criar o migration de relacionamento
+            $table->string('categoria'); //visitante, funcionario, pesquisador, etc...
             $table->timestamps();
         });
     }
