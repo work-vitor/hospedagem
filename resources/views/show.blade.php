@@ -18,11 +18,11 @@
                         <p>Hospedagem: {{ $hospedagens->nome }}</p>
                         <p>Descrição: {{ $hospedagens->descricao }}</p>
 
-                        @foreach ($quartos as $quarto)
+                        {{-- @foreach ($quartos as $quarto)
                             <p>Quarto: {{ $quarto->id }}</p>
                             <p>Quantidade de leitos: {{ $quarto->qtd_leitos }}</p>
                             <br><br>
-                        @endforeach
+                        @endforeach --}}
 
                     </div>
                 </div>
