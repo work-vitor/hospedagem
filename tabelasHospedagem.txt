@@ -1,0 +1,25 @@
+	quarto
+id
+categoria //quarto, leito
+qtd_leitos
+qtd_leito_ocupado
+
+	hospedagens
+id
+nome
+servicos
+descricao
+valor
+
+	usuarios
+id
+nome
+categoria //visitante, funcionario, pesquisador, etc
+
+	compras
+id
+valor_total
+categoria
+check-in
+check-out
+opcao_servico
