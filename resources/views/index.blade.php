@@ -34,7 +34,7 @@
                 </div>
             @endforeach
         </div>
-    </div>
+     </div>
 @stop
 
 @section('css')
