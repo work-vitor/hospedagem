@@ -19,7 +19,11 @@ return new class extends Migration
             $table->string('nome');
             $table->string('servicos');
             $table->string('descricao');
+<<<<<<< HEAD
+            $table->decimal('valor_leito');
+=======
             $table->decimal('valor');
+>>>>>>> refs/remotes/origin/main
             $table->timestamps();
         });
 
