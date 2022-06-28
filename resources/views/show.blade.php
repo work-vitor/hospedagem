@@ -3,36 +3,44 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>{{ $hospedagens->nome }}</h1>
 @stop
 
 @section('content')
 
-    <p>Welcome to this beautiful admin panel.</p>
     <div class="container h-100">
-        <div class="row">
+        <div class="row align-items-center">
 
-            <div class="col-6">
-                <div class="card h-100">
+            <div class="col-10" style="margin: 0 auto;">
+                <p><img src="data:image/;base64,{{ base64_encode($hospedagens->foto) }}" alt="{{ $hospedagens->nome }}"
+                        style="width:100%; border-radius:10px;"></p>
+                {{-- passar o id na func show não esquecer --}}
+
+            </div>
+
+            <div class="col-8">
+                <div class="card bg-dark">
                     <div class="card-body">
-                        <p>Hospedagem: {{ $hospedagens->nome }}</p>
+                        <h4 class="card-title">Hospedagem: {{ $hospedagens->nome }}</h4><br>
+                        <p>Serviços: {{ $hospedagens->servicos }}</p>
+                        <p>Valor: {{ $hospedagens->valor }}</p>
                         <p>Descrição: {{ $hospedagens->descricao }}</p>
-
-                        {{-- @foreach ($quartos as $quarto)
-                            <p>Quarto: {{ $quarto->id }}</p>
-                            <p>Quantidade de leitos: {{ $quarto->qtd_leitos }}</p>
-                            <br><br>
-                        @endforeach --}}
-
+                        <a href="{{ route('compra', $hospedagens->id) }}" class="btn btn-dark">Comprar</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-6">
-                <img src="{{ $hospedagens->foto }}" alt="Fotos da hospedagem :{{ $hospedagens->nome }}" class="img-fluid">
-                {{-- passar o id na func show não esquecer --}}
-
-            </div>
+            {{-- @foreach ($quartos as $quarto)
+                <div class="col-6">
+                    <div class="card bg-dark">
+                        <div class="card-body">
+                            <p>Quarto: {{ $quarto->id }}</p>
+                            <p>Quantidade de leitos: {{ $quarto->qtd_leitos }}</p>
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+            @endforeach --}}
 
         </div>
     </div>
