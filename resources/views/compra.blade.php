@@ -10,31 +10,48 @@
 
     <div class="row">
         <div class="compra">
-            <form>
+            <form method="post" action="{{route('compra.store')}}">
+                <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="checks">
-                    <label for="entrada">Check-in</label>
-                    <input type="date" name="checkin" id="check-in" class="check" required>
-                    <label for="saida">Check-out</label>
-                    <input type="date" name="checkout" id="check-out" class="check" required>
+                    <label for="entrada">Check-in:</label>
+                    <input type="date" name="check-in" id="check-in" class="check" value="{{old('check-in')}}" required>
+                    <br>
+                    <label for="saida">Check-out:</label>
+                    <input type="date" name="check-out" id="check-out" class="check" value="{{old('check-out')}}" required>
                     <span class="validity"></span>
                 </div>
 
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Escolhe</option>
-                    <option value="1">A</option>
-                    <option value="2">B</option>
-                    <option value="3">C</option>
-                  </select>
+
+                <label for="categoria">Categoria:</label>
+                <select class="form-select" aria-label="Default select example" name="categoria">
+                    <option selected >Escolhe</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                </select>
+                <br>
+                
+                <label for="categoria">Serviço de quarto:</label>
+                <select class="form-select" aria-label="Default select example" name="opcao_servico">
+                    <option selected >Escolhe</option>
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>
+                </select>
+                
+                <br>
+                
+                <label for="entrada">Valor Total:</label>
+                <input type="text" name="valor_total" value="{{ $hospedagens->valor }}" readonly>
 
 
 
-               {{--  <div class="hospedes">
+                {{-- <div class="hospedes">
                     <label for="qtd_hospedes">Hospedes:</label>
                     <input type="number" name="qtd_hospedes" id="qtd_hospedes" min="0" max="20">
                 </div> --}}
 
                 <div class="d-grid gap-2 col-3 mx-auto">
-                    <button class="btn btn-primary" type="button">Comprar</button>
+                    <button class="btn btn-primary" type="submit">Comprar</button>
                 </div>
             </form>
         </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompraController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HospedagemController;
 
@@ -24,6 +25,9 @@ use App\Http\Controllers\HospedagemController;
 
 // Tela de compra
     Route::get('home/compra/{id}', [HospedagemController::class, 'compra'])->name('compra');
+
+//Cadastrar compra
+    Route::post('home/compra', [CompraController::class, 'store'])->name('compra.store');
 
 // Pesquisa de hospedagem
     Route::any('/home/search', [HospedagemController::class, 'search'])->name('search');

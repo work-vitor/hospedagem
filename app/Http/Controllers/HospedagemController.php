@@ -31,6 +31,8 @@ class HospedagemController extends Controller
         return view('show', compact('hospedagens'));
     }
 
+    
+
     public function search(Request $request){
         $filters= $request->except('_token');
         $hospedagens = Hospedagem::where('nome', 'LIKE', "%$request->search%")->paginate();
