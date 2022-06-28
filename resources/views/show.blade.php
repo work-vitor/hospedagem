@@ -9,7 +9,7 @@
 @section('content')
 
     <div class="container h-100">
-        <div class="row align-items-center">
+        <div class="row">
 
             <div class="col-10" style="margin: 0 auto;">
                 <p><img src="data:image/;base64,{{ base64_encode($hospedagens->foto) }}" alt="{{ $hospedagens->nome }}"
