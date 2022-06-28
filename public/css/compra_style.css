@@ -1,0 +1,42 @@
+.compra {
+    background-color: blue;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.check {
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.form-select{
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.btn-primary {
+    border-radius: 10px;
+    background: linear-gradient(to right, #ff0066 0%, #3333ff 100%);
+}
+
+.btn
+
+#qtd_hospedes {
+    border-radius: 10px;
+    padding: 4px;
+}
+
+input:invalid+span:after {
+    content: '✖';
+    padding-left: 5px;
+}
+
+input:valid+span:after {
+    content: '✓';
+    padding-left: 5px;
+}
+
+.card-body {
+    color: black;
+}
