@@ -28,7 +28,9 @@ class StoreUpdateCompra extends FormRequest
             'categoria' => 'required | min:1',
             'checkin' => 'required',
             'checkout' => 'required',
-            'opcao_servico' => 'required'
+            'opcao_servico' => 'required',
+            'usuarios_id' => 'required',
+            'quartos_id' => 'required'
         ];
     }
 }

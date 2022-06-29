@@ -3,6 +3,8 @@
 use App\Http\Controllers\CompraController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HospedagemController;
+use App\Http\Controllers\QuartoController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +34,7 @@ use App\Http\Controllers\HospedagemController;
     Route::get('/home/compraShow', [CompraController::class, 'compraShow'])->name('compraShow');
 //Cancelar compra
     Route::delete('/home/compra/{id}', [CompraController::class, 'destroy'])->name('destroy');
+
+
 // Pesquisa de hospedagem
     Route::any('/home/search', [HospedagemController::class, 'search'])->name('search');

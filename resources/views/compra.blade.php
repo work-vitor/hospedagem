@@ -42,6 +42,8 @@
                 
                 <label for="entrada">Valor Total:</label>
                 <input type="text" name="valor_total" value="{{ $hospedagens->valor }}" readonly>
+                <input  type="hidden" name="quartos_id" value="{{ $quartos->id}}" >
+                <input type="hidden" name="usuarios_id" value="{{ $usuarios->id}}" >
 
 
 

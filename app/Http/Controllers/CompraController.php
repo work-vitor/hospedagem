@@ -20,7 +20,9 @@ class CompraController extends Controller
     public function store(StoreUpdateCompra $request)
     {
         Compra::create($request->all());
-        return redirect()->route('compraShow');
+        return redirect()
+            ->route('compraShow')
+            ->with('message', 'Compra efetuada com sucesso');
     }
 
     //Cancelar compra

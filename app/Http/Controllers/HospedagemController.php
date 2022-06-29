@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Compra;
 use Illuminate\Http\Request;
 use App\Models\Hospedagem;
+use App\Models\Quarto;
+use App\Models\Usuario;
 
 class HospedagemController extends Controller
 {
@@ -47,6 +50,8 @@ class HospedagemController extends Controller
      */
     public function compra($id){
         $hospedagens = Hospedagem::find($id);
-        return view('compra', compact('hospedagens'));
+        $quartos = Quarto::find($id);
+        $usuarios = Usuario::find(1);
+        return view('compra', compact('hospedagens', 'quartos', 'usuarios'));
     }
 }
