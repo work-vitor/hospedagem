@@ -11,15 +11,15 @@
     <div class="container h-100">
         <div class="row">
 
-            <div class="col-10" style="margin: 0 auto;">
+            <div class="col-12" style="margin: 0 auto;">
                 <p><img src="data:image/;base64,{{ base64_encode($hospedagens->foto) }}" alt="{{ $hospedagens->nome }}"
-                        style="width:100%; border-radius:10px;"></p>
+                        style="max-width:100%; border-radius:10px;"></p>
                 {{-- passar o id na func show não esquecer --}}
 
             </div>
 
-            <div class="col-8">
-                <div class="card bg-dark">
+            <div class="col-12">
+                <div class="card bg-light">
                     <div class="card-body">
                         <h4 class="card-title">Hospedagem: {{ $hospedagens->nome }}</h4><br>
                         <p>Serviços: {{ $hospedagens->servicos }}</p>
@@ -30,7 +30,7 @@
                 </div>
             </div>
 
-            {{-- @foreach ($quartos as $quarto)
+            @foreach ($quartos as $quarto)
                 <div class="col-6">
                     <div class="card bg-dark">
                         <div class="card-body">
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-            @endforeach --}}
+            @endforeach
 
         </div>
     </div>

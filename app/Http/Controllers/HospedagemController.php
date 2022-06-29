@@ -31,10 +31,11 @@ class HospedagemController extends Controller
     public function show($id)
     {
         $hospedagens = Hospedagem::find($id);
-        return view('show', compact('hospedagens'));
+        $quartos = Quarto::where('hospedagems_id', 'LIKE', '$id');
+        return view('show', compact('hospedagens', 'quartos'));
     }
 
-    
+
 
     public function search(Request $request){
         $filters= $request->except('_token');
