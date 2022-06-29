@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('valor_total');
             $table->string('categoria');
-            $table->date('check-in');
-            $table->date('check-out');
+            $table->date('checkin');
+            $table->date('checkout');
             $table->boolean('opcao_servico');
             $table->timestamps();
         });

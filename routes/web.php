@@ -28,6 +28,7 @@ use App\Http\Controllers\HospedagemController;
 
 //Cadastrar compra
     Route::post('home/compra', [CompraController::class, 'store'])->name('compra.store');
-
+//Visualizar detalhes da compra
+    Route::get('/home/compraShow', [CompraController::class, 'compraShow'])->name('compraShow');
 // Pesquisa de hospedagem
     Route::any('/home/search', [HospedagemController::class, 'search'])->name('search');

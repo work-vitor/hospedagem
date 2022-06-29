@@ -26,8 +26,8 @@ class StoreUpdateCompra extends FormRequest
         return [
             'valor_total' => 'required | min:1',
             'categoria' => 'required | min:1',
-            'check-in' => 'required',
-            'check-out' => 'required',
+            'checkin' => 'required',
+            'checkout' => 'required',
             'opcao_servico' => 'required'
         ];
     }
