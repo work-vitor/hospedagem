@@ -29,9 +29,8 @@
                     <label for="categoria">Categoria:</label>
                     <select class="form-select" aria-label="Default select example" name="categoria">
                         <option selected>Opção</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
+                        <option value="A">Leito</option>
+                        <option value="B">Quarto</option>
                     </select>
                     <br>
 
