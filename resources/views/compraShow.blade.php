@@ -4,6 +4,12 @@
 
 @section('content_header')
     <h1>Compras</h1>
+
+    @if (session('message'))
+        <div>
+            {{session('message')}}
+        </div>
+    @endif
 @stop
 
 @section('content')
@@ -20,8 +26,14 @@
                     <h3>Check-In: {{ $compra->checkin}}</h3>
                     <h3>Check-Out: {{ $compra->checkout}}</h3>
                     <h3>Valor Total: R$ {{$compra->valor_total}}</h3>
+
+                    <form action="{{route('destroy', $compra->id)}}" method="POST">
+                        @csrf
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-dark btn-lg ml-1">Cancelar Compra </button>
+                    </form>
                     
-                    <a href="" class="btn btn-dark btn-lg ml-1">Cancelar compra</a>
+                    
                 </div>
             @endforeach
         </div>

@@ -30,5 +30,7 @@ use App\Http\Controllers\HospedagemController;
     Route::post('home/compra', [CompraController::class, 'store'])->name('compra.store');
 //Visualizar detalhes da compra
     Route::get('/home/compraShow', [CompraController::class, 'compraShow'])->name('compraShow');
+//Cancelar compra
+    Route::delete('/home/compra/{id}', [CompraController::class, 'destroy'])->name('destroy');
 // Pesquisa de hospedagem
     Route::any('/home/search', [HospedagemController::class, 'search'])->name('search');

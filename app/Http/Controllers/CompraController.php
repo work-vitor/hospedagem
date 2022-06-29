@@ -22,4 +22,19 @@ class CompraController extends Controller
         Compra::create($request->all());
         return redirect()->route('compraShow');
     }
-}
+
+    //Cancelar compra
+    public function destroy($id){
+        $compras = Compra::find($id);
+            if(!$compras){
+                return redirect()
+                    ->route('compraShow')
+                    ->with('message', 'Não foi possivel cancelar a compra');
+            }
+            $compras->delete();
+            return redirect()
+                    ->route('compraShow')
+                    ->with('message', 'Compra cancelada com sucesso');
+        }
+    }
+
