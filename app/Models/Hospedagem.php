@@ -10,7 +10,7 @@ class Hospedagem extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome', 'servicos', 'descricao', 'valor', 'foto'];
+    protected $fillable = ['nome', 'servicos', 'descricao', 'valor_leito', 'foto'];
 
     public function quartos(){
         return $this->hasMany(Quarto::class);
