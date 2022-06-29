@@ -267,6 +267,11 @@ return [
             'icon' => 'fas fa-cube',
             'route' => 'index',
         ],
+        [
+            'text' => 'Compras',
+            'icon' => 'fas fa-cube',
+            'route' => 'compraShow',
+        ],
 
         // SE ALGUEM QUISER UM DROPBOX NO MENU PODE USAR ESSE EXEMPLO
         // [

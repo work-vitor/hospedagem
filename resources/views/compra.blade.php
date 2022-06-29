@@ -14,10 +14,10 @@
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="checks">
                     <label for="entrada">Check-in:</label>
-                    <input type="date" name="check-in" id="check-in" class="check" value="{{old('check-in')}}" required>
+                    <input type="date" name="checkin" id="checkin" class="check" value="{{old('checkin')}}" required>
                     <br>
                     <label for="saida">Check-out:</label>
-                    <input type="date" name="check-out" id="check-out" class="check" value="{{old('check-out')}}" required>
+                    <input type="date" name="checkout" id="checkout" class="check" value="{{old('checkout')}}" required>
                     <span class="validity"></span>
                 </div>
 

@@ -10,7 +10,7 @@ use App\Models\Quarto;
 class Compra extends Model
 {
     use HasFactory;
-    protected $fillable = ['usuarios_id', 'quartos_id','valor_total', 'categoria', 'check-in', 'check-out', 'opcao_servico'];
+    protected $fillable = ['usuarios_id', 'quartos_id','valor_total', 'categoria', 'checkin', 'checkout', 'opcao_servico'];
 
     public function usuarios(){
         return $this->hasOne(Usuario::class);
