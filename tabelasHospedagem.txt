@@ -23,3 +23,7 @@ categoria
 check-in
 check-out
 opcao_servico
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9b9e0fef80e0b403c6ffe12e46031ac9c686eecf

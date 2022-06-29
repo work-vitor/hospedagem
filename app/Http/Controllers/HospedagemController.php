@@ -49,4 +49,6 @@ class HospedagemController extends Controller
         $hospedagens = Hospedagem::find($id);
         return view('compra', compact('hospedagens'));
     }
+
+    
 }
