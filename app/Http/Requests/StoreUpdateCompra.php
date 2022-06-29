@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class StoreUpdateCompra extends FormRequest
 {
@@ -23,6 +24,7 @@ class StoreUpdateCompra extends FormRequest
      */
     public function rules()
     {
+
         return [
             'valor_total' => 'required | min:1',
             'categoria' => 'required | min:1',

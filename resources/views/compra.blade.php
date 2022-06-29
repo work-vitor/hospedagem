@@ -54,7 +54,6 @@
                     <label for="entrada">Valor Total:</label>
                     <span>R${{ $hospedagens->valor_leito }}</span>
                     <input type="hidden" name="valor_total" value="{{ $hospedagens->valor_leito }}" readonly>
-                    {{-- <input type="hidden" name="quartos_id" value="{{ $quarto->id }}"> --}}
                     <input type="hidden" name="usuarios_id" value="{{ $usuarios->id }}">
 
                     <div class="d-grid gap-2 col-5 mx-auto">
