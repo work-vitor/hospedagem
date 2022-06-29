@@ -30,18 +30,18 @@
                     <option value="C">C</option>
                 </select>
                 <br>
-                
+
                 <label for="categoria">Serviço de quarto:</label>
                 <select class="form-select" aria-label="Default select example" name="opcao_servico">
                     <option selected >Escolhe</option>
                     <option value="1">Sim</option>
                     <option value="0">Não</option>
                 </select>
-                
+
                 <br>
-                
+
                 <label for="entrada">Valor Total:</label>
-                <input type="text" name="valor_total" value="{{ $hospedagens->valor }}" readonly>
+                <input type="text" name="valor_total" value="{{ $hospedagens->valor_leito }}" readonly>
                 <input  type="hidden" name="quartos_id" value="{{ $quartos->id}}" >
                 <input type="hidden" name="usuarios_id" value="{{ $usuarios->id}}" >
 

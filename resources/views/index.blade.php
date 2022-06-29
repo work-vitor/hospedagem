@@ -28,7 +28,7 @@
                 <div><a href="{{ route('show', $hospedagem->id) }}" style="color: black;">
                     <img src="data:image/;base64,{{ base64_encode($hospedagem->foto) }}" alt="{{ $hospedagem->nome }}" style="width:250px; height:200px; border-radius:10px">
                     <h2><b>{{ $hospedagem->nome }}</b></h3>
-                    <h4>R$ {{ $hospedagem->valor }}</h5>
+                    <h4>R$ {{ $hospedagem->valor_leito }}</h5>
                 </div></a>
                 <div>
                     <a href="{{ route('show', $hospedagem->id) }}" class="btn btn-dark btn-lg mr-1">Ver detalhes</a>

@@ -23,7 +23,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Hospedagem: {{ $hospedagens->nome }}</h4><br>
                         <p>Serviços: {{ $hospedagens->servicos }}</p>
-                        <p>Valor: {{ $hospedagens->valor }}</p>
+                        <p>Valor: {{ $hospedagens->valor_leito }}</p>
                         <p>Descrição: {{ $hospedagens->descricao }}</p>
                         <a href="{{ route('compra', $hospedagens->id) }}" class="btn btn-dark">Comprar</a>
                     </div>
