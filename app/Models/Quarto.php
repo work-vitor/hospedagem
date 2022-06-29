@@ -11,7 +11,7 @@ class Quarto extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['hospedagems_id', 'qtd_leitos', 'qtd_leito_ocupado'];
+    protected $fillable = ['id', 'hospedagems_id', 'qtd_leitos', 'qtd_leito_ocupado'];
 
     public function hospedagems(){
         return $this->belongsTo(Hospedagem::class);

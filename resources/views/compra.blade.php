@@ -13,6 +13,14 @@
             <div class="compra">
                 <form method="post" action="{{ route('compra.store') }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                    <label for="quarto">Quarto:</label>
+                    <select class="form-select" name="quartos_id">
+                        @foreach ($quartos as $quarto)
+                            <option value="{{ $quarto->id }}">{{ $quarto->id }}</option>
+                        @endforeach
+                    </select>
+
                     <div class="checks">
                         <label for="entrada">Check-in:</label>
                         <input type="date" name="checkin" id="checkin" class="check" value="{{ old('checkin') }}"
@@ -29,8 +37,8 @@
                     <label for="categoria">Categoria:</label>
                     <select class="form-select" aria-label="Default select example" name="categoria">
                         <option selected>Opção</option>
-                        <option value="A">Leito</option>
-                        <option value="B">Quarto</option>
+                        <option value="leito">Leito</option>
+                        <option value="quarto">Quarto</option>
                     </select>
                     <br>
 
@@ -46,15 +54,8 @@
                     <label for="entrada">Valor Total:</label>
                     <span>R${{ $hospedagens->valor_leito }}</span>
                     <input type="hidden" name="valor_total" value="{{ $hospedagens->valor_leito }}" readonly>
-                    <input type="hidden" name="quartos_id" value="{{ $quartos->id }}">
+                    {{-- <input type="hidden" name="quartos_id" value="{{ $quarto->id }}"> --}}
                     <input type="hidden" name="usuarios_id" value="{{ $usuarios->id }}">
-
-
-
-                    {{-- <div class="hospedes">
-                    <label for="qtd_hospedes">Hospedes:</label>
-                    <input type="number" name="qtd_hospedes" id="qtd_hospedes" min="0" max="20">
-                </div> --}}
 
                     <div class="d-grid gap-2 col-5 mx-auto">
                         <button class="btn btn-primary" type="submit">Comprar</button>

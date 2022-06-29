@@ -51,7 +51,7 @@ class HospedagemController extends Controller
      */
     public function compra($id){
         $hospedagens = Hospedagem::find($id);
-        $quartos = Quarto::find($id);
+        $quartos = Quarto::all();
         $usuarios = Usuario::find(1);
         return view('compra', compact('hospedagens', 'quartos', 'usuarios'));
     }
