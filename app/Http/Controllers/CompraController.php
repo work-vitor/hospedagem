@@ -23,14 +23,14 @@ class CompraController extends Controller
     {
         $data = $request->all();
         $quartos_id = $data['quartos_id'];
+
         $quarto = Quarto::find(1);
-        // $qtd_leito_ocupado
-        // $quarto['id'] = $quartos_id;
+        $this_qtd_leito_ocupado = $quarto->qtd_leito_ocupado;
+        $this_qtd_leitos = $quarto->qtd_leitos;
 
-        // if(){
-        //     return redirect()->route('compraShow')->with('message', 'Quarto cheio!');
-        // }
-
+        if($this_qtd_leitos === $this_qtd_leito_ocupado){
+            return redirect()->route('compraShow')->with('message', 'Quarto cheio!');
+        }
         DB::statement("update quartos set qtd_leito_ocupado = qtd_leito_ocupado+1 where id = $quartos_id");
 
         Compra::create($data);
@@ -40,9 +40,12 @@ class CompraController extends Controller
     //Cancelar compra
     public function destroy($id){
         $compras = Compra::find($id);
+        $quarto = Quarto::find(1);
+
             if(!$compras){
                 return redirect()->route('compraShow')->with('message', 'Não foi possivel cancelar a compra');
             }
+            DB::statement("update quartos set qtd_leito_ocupado = qtd_leito_ocupado-1 where id = $quarto->id");
             $compras->delete();
             return redirect()->route('compraShow')->with('message', 'Compra cancelada com sucesso');
         }
