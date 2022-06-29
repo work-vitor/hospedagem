@@ -23,6 +23,13 @@ class CompraController extends Controller
     {
         $data = $request->all();
         $quartos_id = $data['quartos_id'];
+        $quarto = Quarto::find(1);
+        // $qtd_leito_ocupado
+        // $quarto['id'] = $quartos_id;
+
+        // if(){
+        //     return redirect()->route('compraShow')->with('message', 'Quarto cheio!');
+        // }
 
         DB::statement("update quartos set qtd_leito_ocupado = qtd_leito_ocupado+1 where id = $quartos_id");
 
