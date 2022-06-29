@@ -24,14 +24,17 @@
     <div class="container">
         <div class="row">
             @foreach ($hospedagens as $hospedagem )
-                <div class="col-12 col-sm-6 col-md-4 my-3" align="center">
-
-                    <p><img src="data:image/;base64,{{ base64_encode($hospedagem->foto) }}" alt="{{ $hospedagem->nome }}" style="width:250px; height:200px; border-radius:10px"></p>
-                    <h3>{{ $hospedagem->nome }}</h3>
-                    <h5>{{ $hospedagem->valor }}</h5>
+            <div class="col-12 col-sm-6 col-md-4 my-3">
+                <div><a href="{{ route('show', $hospedagem->id) }}" style="color: black;">
+                    <img src="data:image/;base64,{{ base64_encode($hospedagem->foto) }}" alt="{{ $hospedagem->nome }}" style="width:250px; height:200px; border-radius:10px">
+                    <h2><b>{{ $hospedagem->nome }}</b></h3>
+                    <h4>R$ {{ $hospedagem->valor }}</h5>
+                </div></a>
+                <div>
                     <a href="{{ route('show', $hospedagem->id) }}" class="btn btn-dark btn-lg mr-1">Ver detalhes</a>
                     <a href="{{ route('compra', $hospedagem->id) }}" class="btn btn-dark btn-lg ml-1">Comprar</a>
                 </div>
+            </div>
             @endforeach
         </div>
     </div>

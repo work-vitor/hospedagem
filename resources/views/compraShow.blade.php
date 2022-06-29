@@ -13,7 +13,7 @@
 @stop
 
 @section('content')
-   
+
 
     <hr>
 
@@ -22,7 +22,7 @@
             @foreach ($compras as $compra )
                 <div class="col-12 col-sm-6 col-md-4 my-3" align="center">
 
-                    <h3>Catwgoria: {{ $compra->categoria }}</h3>
+                    <h3>Categoria: {{ $compra->categoria }}</h3>
                     <h3>Check-In: {{ $compra->checkin}}</h3>
                     <h3>Check-Out: {{ $compra->checkout}}</h3>
                     <h3>Valor Total: R$ {{$compra->valor_total}}</h3>
@@ -32,8 +32,8 @@
                         <input type="hidden" name="_method" value="DELETE">
                         <button type="submit" class="btn btn-dark btn-lg ml-1">Cancelar Compra </button>
                     </form>
-                    
-                    
+
+
                 </div>
             @endforeach
         </div>

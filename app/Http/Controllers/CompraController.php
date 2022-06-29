@@ -7,7 +7,7 @@ use App\Http\Requests\StoreUpdateCompra;
 use App\Models\Compra;
 
 class CompraController extends Controller
-{   
+{
     //Visualizar Compras
     public function compraShow()
     {
@@ -20,6 +20,7 @@ class CompraController extends Controller
     public function store(StoreUpdateCompra $request)
     {
         Compra::create($request->all());
+
         return redirect()
             ->route('compraShow')
             ->with('message', 'Compra efetuada com sucesso');
