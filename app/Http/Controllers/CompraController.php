@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUpdateCompra;
 use App\Models\Compra;
+use App\Models\Quarto;
+use Illuminate\Support\Facades\DB;
 
 class CompraController extends Controller
 {
@@ -19,25 +21,23 @@ class CompraController extends Controller
     //cadastrar compra
     public function store(StoreUpdateCompra $request)
     {
-        Compra::create($request->all());
+        $data = $request->all();
+        $quartos_id = $data['quartos_id'];
 
-        return redirect()
-            ->route('compraShow')
-            ->with('message', 'Compra efetuada com sucesso');
+        DB::statement("update quartos set qtd_leito_ocupado = qtd_leito_ocupado+1 where id = $quartos_id");
+
+        Compra::create($data);
+        return redirect()->route('compraShow')->with('message', 'Compra efetuada com sucesso');
     }
 
     //Cancelar compra
     public function destroy($id){
         $compras = Compra::find($id);
             if(!$compras){
-                return redirect()
-                    ->route('compraShow')
-                    ->with('message', 'Não foi possivel cancelar a compra');
+                return redirect()->route('compraShow')->with('message', 'Não foi possivel cancelar a compra');
             }
             $compras->delete();
-            return redirect()
-                    ->route('compraShow')
-                    ->with('message', 'Compra cancelada com sucesso');
+            return redirect()->route('compraShow')->with('message', 'Compra cancelada com sucesso');
         }
     }
 
