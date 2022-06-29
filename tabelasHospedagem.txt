@@ -23,3 +23,7 @@ categoria
 check-in
 check-out
 opcao_servico
+<<<<<<< .merge_file_a04616
+=======
+
+>>>>>>> .merge_file_a07296

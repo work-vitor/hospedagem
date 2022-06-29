@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('servicos');
             $table->string('descricao');
-            $table->decimal('valor');
+            $table->decimal('valor_leito');
             $table->timestamps();
         });
 
