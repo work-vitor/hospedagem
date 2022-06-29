@@ -1,7 +1,7 @@
 /node_modules
 /public/hot
 /vendor
-.env.backup
+.env
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
